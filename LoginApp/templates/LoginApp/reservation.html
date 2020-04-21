@@ -1,0 +1,61 @@
+{% extends "LoginApp/Base.html" %}
+{% load static%}
+{% block content %}
+
+<div class="content-section">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> BOOK YOUR TICKET</legend>
+        </fieldset>
+    </form>
+<form class="w3-container">
+    <table>
+        <tr>
+            <td width="50%"><label>From station:</label></td>
+            <td width="200%"><input class="w3-input w3-border w3-round-large" name="from1" type="text" style="width:200%"></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td width="50%"><label>To station:</label></td>
+            <td width="200%"><input class="w3-input w3-border w3-round-large" name="last" type="text" style="width:200%"></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td width="50%"><label>Date:</label></td>
+            <td width="200%"><input class="w3-input w3-border w3-round-large" name="date" type="date" style="width:200%"></td>
+        </tr>
+        <tr>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td width="50%"><label>Class:</label></td>
+            <td><form action="/action_page.php">
+
+  <input type="radio" id="First class" name="first" value="male">
+  <label for="male">First class</label><br>
+  <input type="radio" id="Second Class" name="second" value="female">
+  <label for="female">Second Class</label><br>
+  <input type="radio" id="other" name="other" value="other">
+  <label for="other">Luaguage</label>
+            </form>
+            </td>
+        </tr>
+    </table>
+<center>
+    <button class="btn btn-outline-info" type="submit" >Show Train</button>
+</center>
+
+    </form>
+
+</div>
+
+
+{% endblock %}

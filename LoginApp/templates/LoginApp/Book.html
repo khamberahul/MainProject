@@ -1,0 +1,49 @@
+{% extends "LoginApp/Base.html" %}
+{% block content %}
+<form method="GET" action="/book/" id="systemForm">
+<article class="media content-section">
+
+        <div class="media-body">
+        <div class="article-metadata">
+            <p><center><h1>CONFIRM YOUR TICKET HERE</h1></center></p>
+        </div>
+            <div class="article-metadata"><center>
+            <table>
+                <tr>
+                    <td><h4><label>Location:</label></h4></td>
+                    <td><h4>{{ object2.froms }}<br></h4></td>
+                </tr>
+                <tr>
+                    <td><h4><label>Destination:</label></h4></td>
+                    <td><h4>{{ object2.tos }}<br></h4></td>
+                </tr>
+                <tr>
+                    <td><h4><label>Fare:</label></h4></td>
+                    <td><h4>{{ object2.fare }}</h4></td>
+                </tr>
+                <tr>
+                    <td><h4><label>Class:</label></h4></td>
+                    <td><h4>{{ object2.classs }}</h4></td>
+                </tr>
+                <tr>
+                    <td><h4><label>Payment:</label></h4></td>
+                <td><h4><input type="radio" id="First class">
+                <label for="first">cash payment(No other options)</label><br></h4></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-outline-info" type="submit"><a href="{% url 'home' %}">Confirm Ticket</a></button>
+                        {% else %}
+                        <label>Log in</label>
+                        {% endif %}
+                        </td>
+                </tr>
+            </table>
+                </center>
+        </div>
+        </div>
+    </article>
+</form>
+{% endblock content %}

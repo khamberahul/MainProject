@@ -1,0 +1,26 @@
+{% extends "LoginApp/Base.html" %}
+{% load static%}
+{% block content %}
+<form method="GET" action="/booking/" id="systemForm">
+ {% for object1 in objects %}
+    <article class="media content-section">
+
+        <div class="media-body">
+        <div class="article-metadata">
+        <h4><a class="mr-2" href="#" name="system">{{ object1.froms }}</a>
+
+            <label>TO</label>
+            <a class="mr-2" href="#" name="system">{{ object1.tos }}</a></h4>
+        </div>
+        <h4>
+            <label>Fare:</label>
+            <a class="article-title" href="#">{{ object1.fare }}</a></h4>
+            <h4></h4><label>Class:</label>
+                <a class="article-content" align="right">{{ object1.classs }}</a></h4>
+            <p align="right"><button class="btn btn-outline-info" type="submit" align="right" name="system" value="{{system}}" form="systemForm"><a href="{% url 'booking' pk=object1.pk%}">Book Ticket</a></button></p>
+        </div>
+
+    </article>
+    {% endfor %}
+    </form>
+{% endblock content %}
